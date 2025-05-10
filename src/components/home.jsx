@@ -1,23 +1,23 @@
- import React,{useEffect,useState} from "react";
+import React, { useEffect, useState } from "react";
 import MemeCard from "./cards";
-import{getAllMemes} from "../api/memes"
+import { getAllMemes } from "../api/memes"
 
- const Home =()=>{
+const Home = () => {
 
-    const[data,setData]=useState([]);
+    const [data, setData] = useState([]);
 
-    useEffect(()=>{
-        getAllMemes().then((memes)=>setData(memes.data.memes))
-    },[])
+    useEffect(() => {
+        getAllMemes().then((memes) => setData(memes.data.memes))
+    }, [])
 
-    return(
+    return (
         <div className="row">
             {
-                data.map((el)=>(
-                    <MemeCard img = {el.url} title = {el.name} />
+                data.map((el) => (
+                    <MemeCard key={el.name} img={el.url} title={el.name} />
                 ))
             }
         </div>
     )
- }
- export default Home
+}
+export default Home
