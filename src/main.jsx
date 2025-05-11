@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter basename="/React-Meme-Generator/">
+    <BrowserRouter basename="/react-meme-generator/">
       <App />
     </BrowserRouter>
   </StrictMode>
